@@ -8,17 +8,27 @@ const TextoInicio = () => {
 }
 const estilo = StyleSheet.create({
     container: {
-        flex: 0.2,
+        flex: 0.35,
+        borderRadius:50,
+        backgroundColor:"#FFFF",
+        padding:20,
+        
+
     },
     titulo:{
+        top:40,
         fontSize:24,
         fontFamily:"Arial",
-        textAlign:"center"
+        textAlign:"center",
+        
     },
     subTitulo:{
+        top:20,
+        padding:45,
         fontSize:15,
         fontFamily:"Arial",
-        textAlign:"center"
+        textAlign:"center",
+        color:"#757575"
     }
 })
 export default TextoInicio;

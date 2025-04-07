@@ -11,6 +11,7 @@ const Fundo = () => {
 const estilo = StyleSheet.create({
     container: {
         flex: 1,
+        alignItems:"center"
     },
     image: {
         width:861 ,
