@@ -5,7 +5,7 @@ const BtAction = (props) => {
         return <View style={EstiloBt.container}>
             <TouchableOpacity
                 style={EstiloBt.botaoMarrom}
-                onPress={() => console.log("Botão pressionado")}>
+                onPress={() => console.log("Botão marrom")}>
                 <Text style={EstiloBt.texto}>{props.text}</Text>
             </TouchableOpacity>
         </View>
@@ -13,7 +13,7 @@ const BtAction = (props) => {
        return <View style={EstiloBt.container}>
             <TouchableOpacity
                 style={EstiloBt.botaoVerde}
-                onPress={() => console.log("Botão pressionado")}>
+                onPress={() => console.log("Botão verde")}>
                 <Text style={EstiloBt.texto}>{props.text}
                 </Text>
             </TouchableOpacity>
