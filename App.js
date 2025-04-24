@@ -1,16 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Fundo from './componentes/Fundo';
-import TextoInicio from './componentes/TextoInicio';
-import BtAction from './componentes/BtAction';
+import TelaLogin from './telas/TelaLogin';
+import TelaInicial from './telas/TelaInicial';
+import CampoTexto from './componentes/Campo';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Fundo/>
-      <TextoInicio/>
-      <BtAction color="marrom" text="Começar"/>
-      <StatusBar style="auto" />
+     {/*<TelaInicial/>*/}
+     <TelaLogin/>
+     <StatusBar style="auto" />
     </View>
   );
 }
@@ -18,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    //backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   }
