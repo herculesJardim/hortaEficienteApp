@@ -3,12 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import TelaLogin from './telas/TelaLogin';
 import TelaInicial from './telas/TelaInicial';
 import CampoTexto from './componentes/Campo';
-
+import Home from './telas/Home';
+import Hortas from './telas/Hortas';
 export default function App() {
   return (
     <View style={styles.container}>
-     {/*<TelaInicial/>*/}
-     <TelaLogin/>
+     {/*<TelaInicial/> <TelaLogin/><Home/><Hortas/>*/}
+     
+     <Hortas/>
+
      <StatusBar style="auto" />
     </View>
   );
