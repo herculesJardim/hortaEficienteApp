@@ -9,7 +9,7 @@ const Botao = (props) => {
     return <View style={EstiloBt.container}>
         <TouchableOpacity
             style={cores[props.color]}
-            onPress={() => console.log("Botão ")}>
+            onPress={props.onPress}>
             <Text style={EstiloBt.texto}>{props.text}</Text>
         </TouchableOpacity>
     </View>

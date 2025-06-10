@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text } from "react-native";
-import BarraSuperior from "../componentes/BarraSuperior";
-import Bloco from "../componentes/Bloco";
+import BarraSuperior from "../../componentes/BarraSuperior";
+import Bloco from "../../componentes/Bloco";
 
 const Home = () => {
     return <View style={styles.container}>
@@ -21,6 +21,7 @@ const Home = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        gap:100
 
 
     },
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start'
     },
     blocos: {
-        flexDirection: "row",
+        flexDirection:"row",
         gap: 10,
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)', // 2 colunas de mesma largura

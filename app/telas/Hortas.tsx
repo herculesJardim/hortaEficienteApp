@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text } from "react-native";
-import BarraSuperior from "../componentes/BarraSuperior";
-import Horta from "../componentes/Horta";
+import BarraSuperior from "../../componentes/BarraSuperior";
+import Horta from "../../componentes/Horta";
 import { FlatList } from "react-native";
 const ListaHortas = [
     {
@@ -47,39 +47,45 @@ const ListaHortas = [
     }
     ,
 
+
 ]
 const Hortas = () => {
-    function rederItem({item}){
-        return <Horta {...item}/>;
+    function rederItem({ item }) {
+        return <Horta {...item} />;
     }
-    return <View style={styles.container}>
-        <View style={styles.barraTopo}>
-            <BarraSuperior title="Hortas" />
-        </View>
+    return (
+        <View style={styles.container}>
+            <View>
+                <BarraSuperior title="Hortas" />
+            </View>
             <FlatList
                 keyExtractor={(item) => item.id}
                 data={ListaHortas}
                 renderItem={rederItem}
                 contentContainerStyle={styles.listBackground}
             />
-    </View>
+
+        </View>
+    )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    barraTopo: {
-        justifyContent: 'flex-start'
+
     },
     listBackground: {
-        width: 393,
-        height: 776,
-        borderRadius: 20,
+        flex:1,
         backgroundColor: '#FAF4F0',
-        justifyContent: "flex-start",
         alignItems: "center",
-        gap:10,
-        paddingTop: 36
+        justifyContent: 'center',
+        gap: 10,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius:20,
+        paddingTop: 34,
+        paddingLeft: 14,
+        paddingRight:14,
+        
+
     }
 });
 export default Hortas;

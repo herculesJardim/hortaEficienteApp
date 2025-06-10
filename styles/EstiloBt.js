@@ -15,7 +15,6 @@ const baseBotao = {
 
 const EstiloBt = StyleSheet.create({
     container: {
-
         alignItems: "center"
     },
     botaoMarrom: {
