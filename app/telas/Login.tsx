@@ -13,6 +13,7 @@ import Fundo from '../../componentes/Fundo';
 import Botao from '../../componentes/Botao';
 import { useState } from 'react';
 import { supabase } from '../../services/lib/supabase';
+import { Link } from 'expo-router';
 const Login = () => {
     const LogoGoogle = require('../../assets/iconeGoogle.png')
     const [email, setEmail] = useState('');
@@ -55,6 +56,9 @@ const Login = () => {
                         resizeMode="contain"
                         style={styles.logoGoogle} />
                 </TouchableOpacity>
+                <Link href={'telas/CadastroUsuario'} style={styles.link}>
+                    <Text>Não tenho Cadastro</Text>
+                </Link>
             </View>
         </View>
     )
@@ -119,6 +123,12 @@ const styles = StyleSheet.create({
         width: 33.32,
         height: 34,
 
+    },
+    link:{
+        marginTop:8,
+        textAlign:'center',
+        textDecorationLine:'underline',
+        marginBottom:30
     }
 
 });
