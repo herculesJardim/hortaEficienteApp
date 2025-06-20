@@ -7,13 +7,14 @@ import {
     TextInput,
     SafeAreaView,
     ScrollView,
+    Pressable
 } from 'react-native';
 import {useRouter } from 'expo-router';
-import Fundo from '../../componentes/Fundo';
-import Botao from '../../componentes/Botao';
+import Fundo from '../componentes/Fundo';
+import Botao from '../componentes/Botao';
 import { useState } from 'react';
-import { supabase } from '../../services/lib/supabase';
-import BotaoVoltar from '../../componentes/BotaoVoltar';
+import { supabase } from '../services/lib/supabase';
+import BotaoVoltar from '../componentes/BotaoVoltar';
 const CadastroUsuario = () => {
 
     const [nome, setNome] = useState('');
@@ -22,10 +23,21 @@ const CadastroUsuario = () => {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const router = useRouter()
-    function handleSignUp() {
+    async function handleSignUp() {
         setLoading(true)
         console.log(nome,email,telefone,password)
+        const {data,error} = await supabase.auth.signUp({
+            email:email,
+            password:password,
+        })
+        if (error){
+            Alert.alert('Error',error.message)
+            setLoading(false);
+        }
+        setLoading(false)
+        router.replace('Login')
     }
+
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={styles.container}>
@@ -65,7 +77,6 @@ const CadastroUsuario = () => {
                             secureTextEntry={true}
                             onChangeText={setPassword}
                         />
-
                         <Botao color="verde" text="Cadastrar" onPress={handleSignUp} />
                     </ScrollView>
                 </View>
@@ -139,8 +150,7 @@ const styles = StyleSheet.create({
         width: 33.32,
         height: 34,
 
-    }
-
+    },
 });
 
 export default CadastroUsuario;

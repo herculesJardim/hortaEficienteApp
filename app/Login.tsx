@@ -9,20 +9,31 @@ import {
     SafeAreaView,
     ScrollView,
 } from 'react-native';
-import Fundo from '../../componentes/Fundo';
-import Botao from '../../componentes/Botao';
+import Fundo from '../componentes/Fundo';
+import Botao from '../componentes/Botao';
 import { useState } from 'react';
-import { supabase } from '../../services/lib/supabase';
-import { Link } from 'expo-router';
+import { supabase } from '../services/lib/supabase';
+import { Link, router } from 'expo-router';
 const Login = () => {
-    const LogoGoogle = require('../../assets/iconeGoogle.png')
+    const LogoGoogle = require('../assets/iconeGoogle.png')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
 
-    function entrada() {
+    async function handleSignIn() {
         setLoading(true)
         console.log(email, password)
+        const {data,error} = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password
+        })
+        if(error){
+            console.error('Error', error.message)
+            setLoading(false);
+            return;
+        }
+        setLoading(false);
+        router.replace('telas/Home')
     }
     return (
         <View style={styles.container}>
@@ -48,7 +59,7 @@ const Login = () => {
                     secureTextEntry={true}
                     onChangeText={setPassword}
                 />
-                <Botao color="marrom" text="Entrar" onPress={entrada} />
+                <Botao color="marrom" text="Entrar" onPress={handleSignIn} />
                 <TouchableOpacity
                     style={styles.botaoGoogle}
                     onPress={() => console.log("Botão ")}>
@@ -56,7 +67,7 @@ const Login = () => {
                         resizeMode="contain"
                         style={styles.logoGoogle} />
                 </TouchableOpacity>
-                <Link href={'telas/CadastroUsuario'} style={styles.link}>
+                <Link href={'CadastroUsuario'} style={styles.link}>
                     <Text>Não tenho Cadastro</Text>
                 </Link>
             </View>
@@ -116,7 +127,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "#8D6E63",
         paddingLeft: 20,
-        borderRadius: 20,
+        borderRadius: 6,
 
     },
     logoGoogle: {

@@ -7,7 +7,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
     }
 const Bloco = (props) => {
     const imagem = imagens[props.logo]
-    return <TouchableOpacity style={styles.container}>
+    return <TouchableOpacity style={styles.container} onPress={props.onPress}>
         <Image source={imagem}
             resizeMode="contain"
             style={styles.imagem} />

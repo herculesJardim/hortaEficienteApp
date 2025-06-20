@@ -1,8 +1,8 @@
-import { AppState } from 'react-native'
-import 'react-native-url-polyfill/auto'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import { createClient, processLock } from '@supabase/supabase-js'
-import {supaUrl, supaAnonKey} from '../chaveUrlSupabase'
+import { AppState } from 'react-native';
+import 'react-native-url-polyfill/auto';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createClient, processLock } from '@supabase/supabase-js';
+import {supaUrl, supaAnonKey} from '../chaveUrlSupabase';
 const supabaseUrl = supaUrl
 const supabaseAnonKey = supaAnonKey
 

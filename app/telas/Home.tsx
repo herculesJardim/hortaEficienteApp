@@ -1,6 +1,7 @@
 import { View, StyleSheet, Text } from "react-native";
 import BarraSuperior from "../../componentes/BarraSuperior";
 import Bloco from "../../componentes/Bloco";
+import { router } from "expo-router";
 
 const Home = () => {
     return <View style={styles.container}>
@@ -10,7 +11,7 @@ const Home = () => {
         <View style={styles.gerenciarHortas}>
             <Text style={styles.titulo}>Gerencie suas Hortas</Text>
             <View style={styles.blocos}>
-                <Bloco title="Minhas Hortas" logo="minhasHortas"/>
+                <Bloco title="Minhas Hortas" logo="minhasHortas" onPress={()=>router.push('telas/Hortas')}/>
                 <Bloco title="Culturas" logo="culturas" />
                 <Bloco title="Produção" logo="producao"/>
                 <Bloco title="Balanço" logo="balanco"/>
@@ -37,8 +38,7 @@ const styles = StyleSheet.create({
     }
     ,
     gerenciarHortas: {
-        width: 393,
-        height: 597,
+        flex:1,
         borderRadius: 20,
         backgroundColor: '#FAF4F0',
         justifyContent: "flex-start",

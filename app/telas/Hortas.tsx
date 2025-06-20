@@ -2,6 +2,7 @@ import { View, StyleSheet, Text } from "react-native";
 import BarraSuperior from "../../componentes/BarraSuperior";
 import Horta from "../../componentes/Horta";
 import { FlatList } from "react-native";
+import BotaoVoltar from "../../componentes/BotaoVoltar";
 const ListaHortas = [
     {
         id: 1,

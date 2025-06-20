@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text } from 'react-native';
-import Fundo from '../../componentes/Fundo';
-import Botao from '../../componentes/Botao';
+import Fundo from '../componentes/Fundo';
+import Botao from '../componentes/Botao';
 import { useRouter } from 'expo-router';
 const Index = () => {
   const router = useRouter();
@@ -13,7 +13,7 @@ const Index = () => {
 
           <Text style={styles.titulo}>A melhor maneira de organizar suas hortas</Text>
           <Text style={styles.subTitulo}>Organizaremos e dimensionaremos sua horta e sua produção.</Text>
-        <Botao color="marrom" text="Começar" onPress={() => router.push({ pathname: '/telas/Login' })} />
+        <Botao color="marrom" text="Começar" onPress={() => router.push({ pathname: 'Login' })} />
       </View>
     </View>
   )
