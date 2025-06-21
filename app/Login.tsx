@@ -6,8 +6,6 @@ import {
     TouchableOpacity,
     Alert,
     TextInput,
-    SafeAreaView,
-    ScrollView,
 } from 'react-native';
 import Fundo from '../componentes/Fundo';
 import Botao from '../componentes/Botao';
@@ -22,7 +20,7 @@ const Login = () => {
 
     async function handleSignIn() {
         setLoading(true)
-        console.log(email, password)
+        //console.log(email, password)
         const {data,error} = await supabase.auth.signInWithPassword({
             email: email,
             password: password
@@ -121,9 +119,9 @@ const styles = StyleSheet.create({
         shadowRadius: 20,
     },
     input: {
-        height: 55,
+        height: 70,
         width: 290,
-        margin: 12,
+        margin: 5,
         borderWidth: 1,
         borderColor: "#8D6E63",
         paddingLeft: 20,

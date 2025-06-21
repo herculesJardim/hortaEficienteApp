@@ -25,10 +25,16 @@ const CadastroUsuario = () => {
     const router = useRouter()
     async function handleSignUp() {
         setLoading(true)
-        console.log(nome,email,telefone,password)
+        //console.log(nome,email,telefone,password)
         const {data,error} = await supabase.auth.signUp({
             email:email,
             password:password,
+            options:{
+                data:{
+                    nome: nome,
+                    telefone: telefone
+                }
+            }
         })
         if (error){
             Alert.alert('Error',error.message)

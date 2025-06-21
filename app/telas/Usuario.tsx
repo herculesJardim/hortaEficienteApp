@@ -1,8 +1,26 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Alert } from "react-native";
+import Botao from "../../componentes/Botao";
+import { supabase } from "../../services/lib/supabase";
+import { useAuth } from "../../contexts/AuthContext";
 export default function Usuario(){
+    const{setAuth}= useAuth();
+    async function handleSingOut(){
+        const {error} = await supabase.auth.signOut();
+            setAuth(null);
+        if(error){
+            Alert.alert('Error','Erro ao sair da Conta')
+            return;
+        }
+    }
     return(
         <View style={styles.container}>
-            <Text> Usuario</Text>
+            <View>
+                <Text> Usuario</Text>
+            </View>
+            <View>
+                <Botao text='Sair'color='verde' onPress={handleSingOut}/>
+            </View>
+
         </View>
     )
 }

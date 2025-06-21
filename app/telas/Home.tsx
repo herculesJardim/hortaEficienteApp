@@ -14,7 +14,7 @@ const Home = () => {
                 <Bloco title="Minhas Hortas" logo="minhasHortas" onPress={()=>router.push('telas/Hortas')}/>
                 <Bloco title="Culturas" logo="culturas" />
                 <Bloco title="Produção" logo="producao"/>
-                <Bloco title="Balanço" logo="balanco"/>
+                <Bloco title="Balanço" logo="balanco" onPress={()=>router.push('telas/Balanco')}/>
             </View>
         </View>
     </View>
